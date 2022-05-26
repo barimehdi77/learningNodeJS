@@ -1,11 +1,38 @@
 var express = require('express');
 var app = express();
+var fs = require('fs');
 var bodyParser = require('body-parser');
 
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post('/file_upload', function (req, res) {
+	console.log(req.files);
+	console.log(req.files.file.name);
+	console.log(req.files.file.path);
+	console.log(req.files.file.type);
+	var file = __dirname + "/" + req.files.file.name;
+
+	fs.readFile( req.files.file.path, function (err, data) {
+	   fs.writeFile(file, data, function (err) {
+		  if( err ) {
+			 console.log( err );
+			 } else {
+				response = {
+				   message:'File uploaded successfully',
+				   filename:req.files.file.name
+				};
+			 }
+
+		  console.log( response );
+		  res.end( JSON.stringify( response ) );
+	   });
+	});
+})
+
 app.get('/POST.htm', function (req, res) {
 	res.sendFile( __dirname + "/" + "POST.htm" );
  })
@@ -14,7 +41,7 @@ app.get('/POST.htm', function (req, res) {
 app.get('/GET.html', function (req, res) {
 	res.sendFile( __dirname + "/" + "GET.html" );
  })
- 
+
  app.post('/process_post', urlencodedParser, function (req, res) {
 	// Prepare output in JSON format
 	response = {
