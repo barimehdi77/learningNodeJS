@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
-var bodyParser = require('body-parser');
+
 
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
