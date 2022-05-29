@@ -1,23 +1,25 @@
 import { Body, Controller, Get, Param, Put } from "@nestjs/common";
-import { FindStudentResponseDto, StudentResponseDto } from "../student/dto/studnet.dto";
-import { UpdateStudentByteacherDto } from "./dto/teacher.dto";
+import { FindStudentResponseDto, StudentResponseDto, updateStudentDto } from "../student/dto/studnet.dto";
+import { TeacherService } from "./teacher.service";
 
 
 @Controller('teachers/:teacherId/students')
 export class StudentsTeachersController {
+	constructor (private readonly teacherService: TeacherService) {}
+
 	@Get()
 	getStudents(
 		@Param('teacherId') teacherId: string
 	): FindStudentResponseDto[] {
-		return (`List All student of teacher with Id = ${teacherId}`);
+		return (this.teacherService.getStudents());
 	}
 
 	@Put('/:studentId')
 	updateStudentByTeacherId(
 		@Param('teacherId') teacherId: string,
 		@Param('studentId') studentId: string,
-		@Body() body: UpdateStudentByteacherDto
+		@Body() body: updateStudentDto
 	): StudentResponseDto {
-		return (`Updating Data of studnent with ID = ${studentId} of teacher with ID = ${teacherId} with the following Data :\n${JSON.stringify(body)}`);
+		return (this.teacherService.updateStudentByTeacherId(teacherId, studentId, body));
 	}
 }

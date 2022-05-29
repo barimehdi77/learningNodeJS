@@ -1,9 +1,9 @@
 export class FindTeacherResponseDto {
-	id: number;
+	id: string;
 	name: string;
 }
 
 export class TeacherResponseDto {
-	id: number;
+	id: string;
 	name: string;
 }

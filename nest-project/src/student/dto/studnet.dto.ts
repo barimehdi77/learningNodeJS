@@ -1,23 +1,24 @@
 export class CreateStudentDto {
-	id: number;
+	id: string;
 	name: string;
 	teacher: string;
 }
 
 export class updateStudentDto {
-	id: number;
+	id: string;
 	name: string;
 	teacher: string;
 }
 
 export class FindStudentResponseDto {
-	id: number;
+	id: string;
 	name: string;
 	teacher: string;
 }
 
-export class StudnetResponseDto {
-	id: number;
+export class StudentResponseDto {
+	id: string;
 	name: string;
 	teacher: string;
 }
+
