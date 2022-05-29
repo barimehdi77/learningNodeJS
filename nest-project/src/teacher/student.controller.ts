@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Param, Put } from "@nestjs/common";
-import { FindStudentResponseDto } from "src/student/dto/studnet.dto";
+import { FindStudentResponseDto, StudentResponseDto } from "../student/dto/studnet.dto";
+import { UpdateStudentByteacherDto } from "./dto/teacher.dto";
 
 
 @Controller('teachers/:teacherId/students')
@@ -15,8 +16,8 @@ export class StudentsTeachersController {
 	updateStudentByTeacherId(
 		@Param('teacherId') teacherId: string,
 		@Param('studentId') studentId: string,
-		@Body() body
-	): FindStudentResponseDto {
+		@Body() body: UpdateStudentByteacherDto
+	): StudentResponseDto {
 		return (`Updating Data of studnent with ID = ${studentId} of teacher with ID = ${teacherId} with the following Data :\n${JSON.stringify(body)}`);
 	}
 }
