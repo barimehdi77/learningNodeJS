@@ -14,11 +14,11 @@ export class TeachersController {
 	}
 
 	@Get('/:teacherId/students')
-	getAllteacherstudents() {
+	getStudents() {
 		return ("All Studnet's of this teacher");
 	}
 
-	@Put('/:teacherid:students/:studentid')
+	@Put('/:teacherid/students/:studentid')
 	updateStudentByTeacherId() {
 		return ("studnet info updated");
 	}
