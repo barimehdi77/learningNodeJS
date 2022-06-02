@@ -6,7 +6,6 @@ import { FindTeacherResponseDto } from './dto/teacher.dto';
 
 @Injectable()
 export class TeacherService {
-	constructor (private readonly studentService: StudentService) {};
 	private teachers = teachers;
 	private students = students;
 
@@ -21,15 +20,21 @@ export class TeacherService {
 	}
 
 	updateStudentByTeacherId(teacherid: string, studentId: string, data: updateStudentDto): StudentResponseDto {
-		const studentOfTeacher = this.studentService.getStudentByTeacherId(teacherid);
+		let updatedstudent: StudentResponseDto;
 
-		const std = studentOfTeacher.find(student => {
-			return (student.id === studentId);
+		const updatedList = this.students.map( student => {
+			if (student.id === studentId){
+				updatedstudent = {
+					...student,
+					teacher: teacherid
+				}
+				return updatedstudent;
+			} else return student;
 		});
+		this.students = updatedList;
 
-		std.id = data.id;
-		std.name = data.name;
-		std.teacher = data.teacher;
-		return (std);
+		return (updatedstudent);
 	}
+
 }
+
