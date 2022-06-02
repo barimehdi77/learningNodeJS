@@ -5,7 +5,8 @@ import { StudentService } from "./student.service";
 
 @Controller('students')
 export class StudentController {
-	constructor(private readonly studentServeice: StudentService) {}
+	constructor(private readonly studentServeice: StudentService) {};
+
 	@Get()
 	getStudents(): FindStudentResponseDto[] {
 		return (this.studentServeice.getStudents());
@@ -21,7 +22,7 @@ export class StudentController {
 	@Post()
 	createStudent(
 		@Body() body: CreateStudentDto
-	): CreateStudentDto {
+	): StudentResponseDto {
 		return (this.studentServeice.createStudent(body));
 	}
 
@@ -29,7 +30,7 @@ export class StudentController {
 	updateStudent(
 		@Param('studentId') studentId: string,
 		@Body() body: updateStudentDto
-	): updateStudentDto {
+	): StudentResponseDto {
 		return (this.studentServeice.updateStudent(studentId, body));
 	}
 }

@@ -17,7 +17,7 @@ export class StudentService {
 		}));
 	}
 
-	createStudent(data: CreateStudentDto): CreateStudentDto {
+	createStudent(data: CreateStudentDto): StudentResponseDto {
 		let newStudent = {
 			id: uuid(),
 			...data
