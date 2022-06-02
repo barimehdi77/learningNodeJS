@@ -2,17 +2,18 @@ import { Injectable } from '@nestjs/common';
 import { students } from '../db'
 import { CreateStudentDto, FindStudentResponseDto, StudentResponseDto, updateStudentDto } from './dto/studnet.dto';
 import { v4 as uuid } from 'uuid';
+import { FindTeacherResponseDto } from 'src/teacher/dto/teacher.dto';
 
 @Injectable()
 export class StudentService {
-	private studnets = students;
+	private students = students;
 
 	getStudents(): FindStudentResponseDto[] {
-		return (this.studnets);
+		return (this.students);
 	}
 
 	getStudentById(studentId: string): FindStudentResponseDto {
-		return (this.studnets.find( student => {
+		return (this.students.find( student => {
 			return (student.id === studentId);
 		}));
 	}
@@ -22,14 +23,14 @@ export class StudentService {
 			id: uuid(),
 			...data
 		}
-		this.studnets.push(newStudent);
+		this.students.push(newStudent);
 		return (newStudent);
 	}
 
 	updateStudent(studentId: string, data: updateStudentDto): StudentResponseDto {
 		let updatedstudent: StudentResponseDto;
 
-		const updatedList = this.studnets.map( student => {
+		const updatedList = this.students.map( student => {
 			if (student.id === studentId){
 				updatedstudent = {
 					id: studentId,
@@ -37,8 +38,15 @@ export class StudentService {
 				}
 			} else return student;
 		});
-		this.studnets = updatedList;
+		this.students = updatedList;
 
 		return (updatedstudent);
+	}
+
+	getStudentByTeacherId(teacherId: string): FindStudentResponseDto[] {
+		return this.students.filter( student => {
+			if (student.teacher === teacherId)
+				return (student);
+		});
 	}
 }

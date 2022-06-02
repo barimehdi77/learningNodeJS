@@ -5,7 +5,8 @@ import { TeacherService } from "./teacher.service";
 
 @Controller('teachers')
 export class TeachersController {
-	constructor (private readonly teacherserver: TeacherService) {}
+	constructor (private readonly teacherserver: TeacherService) {};
+	
 	@Get()
 	getTeachers(): FindTeacherResponseDto[] {
 		return (this.teacherserver.getTeachers());
