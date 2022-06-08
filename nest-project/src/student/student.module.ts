@@ -17,7 +17,6 @@ export class StudentModule implements NestModule {
 		consumer.apply(ValidStudentMiddlewear).forRoutes({
 			path: '/students/:studentid',
 			method: RequestMethod.PUT
-		});
-		
+		}); 
 	}
 }
