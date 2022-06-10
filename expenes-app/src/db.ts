@@ -4,19 +4,19 @@ export let Week = [
 		TimeZone: [
 			{
 				First: {
-						Start: 18,
+						start: 18,
 						end: 19,
 						isReserved: false,
 						reserver: "someone"
 				},
 				Second: {
-						Start: 19,
+						start: 19,
 						end: 20,
 						isReserved: false,
 						reserver: "someone"
 				},
 				Third: {
-						Start: 20,
+						start: 20,
 						end: 21,
 						isReserved: false,
 						reserver: "someone"
@@ -29,19 +29,19 @@ export let Week = [
 		TimeZone: [
 			{
 				First: {
-						Start: 18,
+						start: 18,
 						end: 19,
 						isReserved: false,
 						reserver: "someone"
 				},
 				Second: {
-						Start: 19,
+						start: 19,
 						end: 20,
 						isReserved: false,
 						reserver: "someone"
 				},
 				Third: {
-						Start: 20,
+						start: 20,
 						end: 21,
 						isReserved: false,
 						reserver: "someone"
@@ -54,19 +54,19 @@ export let Week = [
 		TimeZone: [
 			{
 				First: {
-						Start: 18,
+						start: 18,
 						end: 19,
 						isReserved: false,
 						reserver: "someone"
 				},
 				Second: {
-						Start: 19,
+						start: 19,
 						end: 20,
 						isReserved: false,
 						reserver: "someone"
 				},
 				Third: {
-						Start: 20,
+						start: 20,
 						end: 21,
 						isReserved: false,
 						reserver: "someone"

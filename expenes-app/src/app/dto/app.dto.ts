@@ -1,25 +1,23 @@
+export class OneSessionResponseDto {
+	readonly start: number;
+	readonly end: number;
+	isReserved: boolean;
+	reserver: string;
+}
+
+export class SessionsResponseDto {
+	First: OneSessionResponseDto;
+	Second: OneSessionResponseDto;
+	Third: OneSessionResponseDto;
+}
+
 export class WeekResponseDto {
 	DayName: string;
-	TimeZone: [
-		{
-			First: {
-					start: number;
-					end: number;
-					isReserved: boolean;
-					reserver: string;
-			},
-			Second:{
-					start: number;
-					end: number;
-					isReserved: boolean;
-					reserver: string;
-			},
-			Third: {
-				start: number;
-				end: number;
-				isReserved: boolean;
-				reserver: string;
-			}
-		}
-	]
+	TimeZone: SessionsResponseDto[];
+}
+
+
+export class ReservaitonRequestDro {
+	DayName: string;
+	ReservedTime: OneSessionResponseDto;
 }
