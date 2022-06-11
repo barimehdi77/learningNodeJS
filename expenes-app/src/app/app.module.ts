@@ -1,4 +1,5 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
+import { ValidRequestMiddleware } from 'src/comman/middleware/ValidRequest.widdleware';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -7,4 +8,11 @@ import { AppService } from './app.service';
   controllers: [ AppController ],
   providers: [ AppService ]
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(ValidRequestMiddleware).forRoutes({
+      path: '/',
+      method: RequestMethod.PUT
+    });
+  }
+}

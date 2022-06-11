@@ -10,11 +10,10 @@ export class AppService {
 		return (this.week);
 	}
 
-	// reserveTime(timeZone: number, data: ReservaitonRequestDro): ReservaitonRequestDro {
-	// 	const Day =  this.week.find( day => {
-	// 		return (day.DayName === data.DayName);
-	// 	});
-	// 	// if (!Day)
-	// 	// 	return ();
-	// }
+	reserveTime(timeZone: number, data: ReservaitonRequestDro): ReservaitonRequestDro {
+		const Day =  this.week.find( day => {
+			return (day.DayName === data.DayName);
+		});
+		return data;
+	}
 }

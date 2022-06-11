@@ -19,5 +19,6 @@ export class WeekResponseDto {
 
 export class ReservaitonRequestDro {
 	DayName: string;
-	ReservedTime: OneSessionResponseDto;
+	ReservedTime: number;
+	Reserver: string;
 }
