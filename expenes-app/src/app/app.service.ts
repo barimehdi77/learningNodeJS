@@ -10,12 +10,21 @@ export class AppService {
 		return (this.week);
 	}
 
-	reserveTime(timeZone: number, data: ReservaitonRequestDro): WeekResponseDto {
+	reserveTime(data: ReservaitonRequestDro): WeekResponseDto {
 		const Day =  this.week.find( day => {
 			return (day.DayName === data.DayName);
 		});
 		Day.TimeZone[data.ReservedTime].isReserved = true;
 		Day.TimeZone[data.ReservedTime].reserver = data.Reserver;
+		return Day;
+	}
+
+	unReserve(data: ReservaitonRequestDro): WeekResponseDto {
+		const Day =  this.week.find( day => {
+			return (day.DayName === data.DayName);
+		});
+		Day.TimeZone[data.ReservedTime].isReserved = false;
+		Day.TimeZone[data.ReservedTime].reserver = "NoOne";
 		return Day;
 	}
 }

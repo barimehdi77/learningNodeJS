@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Put } from "@nestjs/common";
 import { Week } from '../db'
 import { AppService } from "./app.service";
 import { ReservaitonRequestDro, WeekResponseDto } from "./dto/app.dto";
@@ -13,9 +13,14 @@ export class AppController {
 	}
 	@Put('/')
 	reserveTime(
-		@Param('TimeZone') timeZone: number,
 		@Body() data: ReservaitonRequestDro
 	) : WeekResponseDto {
-		return (this.appservice.reserveTime(timeZone, data));
+		return (this.appservice.reserveTime(data));
+	}
+	@Delete()
+	unReserve(
+		@Body() data: ReservaitonRequestDro
+	) : WeekResponseDto {
+		return (this.appservice.unReserve(data));
 	}
 }
