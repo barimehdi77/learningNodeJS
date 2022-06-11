@@ -11,10 +11,16 @@ export class ValidRequestMiddleware implements NestMiddleware {
 		const Day = Week.find(day => {
 			return (day.DayName === req.body.DayName);
 		});
+		console.log(Day.TimeZone["First"]);
 		if (!Day)
 			throw new HttpException("You Can't reserve in This day", 400);
-		if (req.body.ReservedTime !== 1 && req.body.ReservedTime !== 2 && req.body.ReservedTime !== 3)
-			throw new HttpException("Reserved Time is Incorrect", 401)
+		if (req.body.ReservedTime !== "First" && req.body.ReservedTime !== "Second" && req.body.ReservedTime !== "Third")
+			throw new HttpException("Reserved Time is Incorrect", 401);
+		if (Day)
+		{
+			if (Day.TimeZone[req.body.ReservedTime].isReserved == true)
+				throw new HttpException("TimeZone is reserved", 402);
+		}
 		next();
 	}
 }

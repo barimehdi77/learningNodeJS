@@ -15,7 +15,7 @@ export class AppController {
 	reserveTime(
 		@Param('TimeZone') timeZone: number,
 		@Body() data: ReservaitonRequestDro
-	) : ReservaitonRequestDro {
+	) : WeekResponseDto {
 		return (this.appservice.reserveTime(timeZone, data));
 	}
 }

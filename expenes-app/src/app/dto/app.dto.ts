@@ -13,12 +13,12 @@ export class SessionsResponseDto {
 
 export class WeekResponseDto {
 	DayName: string;
-	TimeZone: SessionsResponseDto[];
+	TimeZone: SessionsResponseDto;
 }
 
 
 export class ReservaitonRequestDro {
 	DayName: string;
-	ReservedTime: number;
+	ReservedTime: string;
 	Reserver: string;
 }

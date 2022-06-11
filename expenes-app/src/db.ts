@@ -1,8 +1,7 @@
 export let Week = [
 	{
 		DayName : "TuesDay",
-		TimeZone: [
-			{
+		TimeZone: {
 				First: {
 						start: 18,
 						end: 19,
@@ -22,12 +21,10 @@ export let Week = [
 						reserver: "someone"
 				}
 			}
-		]
 	},
 	{
 		DayName : "Wednesday",
-		TimeZone: [
-			{
+		TimeZone: {
 				First: {
 						start: 18,
 						end: 19,
@@ -47,12 +44,10 @@ export let Week = [
 						reserver: "someone"
 				}
 			}
-		]
 	},
 	{
 		DayName : "Friday",
-		TimeZone: [
-			{
+		TimeZone: {
 				First: {
 						start: 18,
 						end: 19,
@@ -72,6 +67,5 @@ export let Week = [
 						reserver: "someone"
 				}
 			}
-		]
 	}
 ]
