@@ -17,4 +17,13 @@ export class TeamService {
 			return (team.TeamId == TeamId);
 		}))
 	}
+
+	CreateNewTeam(Team : TeamsResponseDto) : TeamsResponseDto {
+		let NewTeam = {
+			TeamId: Math.floor(100000 + Math.random() * 900000),
+			...Team
+		}
+		this.teams.push(NewTeam);
+		return (NewTeam);
+	}
 }
