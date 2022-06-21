@@ -11,5 +11,50 @@
       "StackId": "arn:aws:cloudformation:us-east-1:914989871285:stack/amplify-reactamplifytestapp-dev-64422/19b25230-f14f-11ec-a76e-126a09e165f9",
       "AmplifyAppId": "d2tkfzmrg9f3em"
     }
+  },
+  "auth": {
+    "reactamplifytestapp": {
+      "service": "Cognito",
+      "serviceType": "managed",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": []
+        },
+        "mfaTypes": [],
+        "verificationMechanisms": []
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/auth/reactamplifytestapp-cloudformation-template.json",
+        "logicalId": "authreactamplifytestapp"
+      },
+      "lastPushTimeStamp": "2022-06-21T12:55:43.311Z",
+      "output": {
+        "IdentityPoolId": "us-east-1:fa860d3b-6c2f-41fe-9622-1c2902151214",
+        "IdentityPoolName": "reactamplifytestapp_identitypool_f8057c55__dev"
+      },
+      "lastPushDirHash": "moTsk9DFmxAanvmmf9oxHEKOCt8="
+    }
+  },
+  "analytics": {
+    "reactamplifytestapp": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+        "logicalId": "analyticsreactamplifytestapp"
+      },
+      "lastPushTimeStamp": "2022-06-21T12:55:43.311Z",
+      "output": {
+        "appName": "reactamplifytestapp-dev",
+        "Region": "us-east-1",
+        "Id": "e0be9d38607540b9a6d48cd1de523cde"
+      },
+      "lastPushDirHash": "Jr/u09wi+ZiNsJcu1kPPLD3wBM4="
+    }
   }
 }

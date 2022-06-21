@@ -1,0 +1,24 @@
+{
+  "identityPoolName": "reactamplifytestapp_identitypool_f8057c55",
+  "allowUnauthenticatedIdentities": true,
+  "authSelections": "identityPoolOnly",
+  "resourceName": "reactamplifytestapp",
+  "sharedId": "f8057c55",
+  "serviceName": "Cognito",
+  "useDefault": "manual",
+  "authRoleArn": {
+    "Fn::GetAtt": [
+      "AuthRole",
+      "Arn"
+    ]
+  },
+  "unauthRoleArn": {
+    "Fn::GetAtt": [
+      "UnauthRole",
+      "Arn"
+    ]
+  },
+  "breakCircularDependency": true,
+  "useEnabledMfas": true,
+  "dependsOn": []
+}
