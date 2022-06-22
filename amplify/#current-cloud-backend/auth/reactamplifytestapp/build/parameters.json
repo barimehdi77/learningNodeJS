@@ -1,11 +1,41 @@
 {
   "identityPoolName": "reactamplifytestapp_identitypool_f8057c55",
-  "allowUnauthenticatedIdentities": true,
-  "authSelections": "identityPoolOnly",
+  "allowUnauthenticatedIdentities": false,
+  "resourceNameTruncated": "reactaccf258d6",
+  "userPoolName": "reactamplifytestapp_userpool_ccf258d6",
+  "autoVerifiedAttributes": [
+    "email"
+  ],
+  "mfaConfiguration": "OFF",
+  "mfaTypes": [
+    "SMS Text Message"
+  ],
+  "smsAuthenticationMessage": "Your authentication code is {####}",
+  "smsVerificationMessage": "Your verification code is {####}",
+  "emailVerificationSubject": "Your verification code",
+  "emailVerificationMessage": "Your verification code is {####}",
+  "defaultPasswordPolicy": false,
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": [],
+  "requiredAttributes": [
+    "email"
+  ],
+  "aliasAttributes": [],
+  "userpoolClientGenerateSecret": false,
+  "userpoolClientRefreshTokenValidity": 30,
+  "userpoolClientWriteAttributes": [
+    "email"
+  ],
+  "userpoolClientReadAttributes": [
+    "email"
+  ],
+  "userpoolClientLambdaRole": "reactaccf258d6_userpoolclient_lambda_role",
+  "userpoolClientSetAttributes": false,
+  "authSelections": "identityPoolAndUserPool",
   "resourceName": "reactamplifytestapp",
   "sharedId": "f8057c55",
   "serviceName": "Cognito",
-  "useDefault": "manual",
+  "useDefault": "default",
   "authRoleArn": {
     "Fn::GetAtt": [
       "AuthRole",
@@ -20,5 +50,8 @@
   },
   "breakCircularDependency": true,
   "useEnabledMfas": true,
-  "dependsOn": []
+  "dependsOn": [],
+  "hostedUI": false,
+  "userPoolGroupList": [],
+  "authProviders": []
 }

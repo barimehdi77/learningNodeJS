@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import { Analytics } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 import { useEffect } from 'react';
 
 
-function App() {
+function App({ signOut, user }) {
 
   useEffect(() => {
     Analytics.record({ name: "HomePage" });
@@ -21,7 +23,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload. with amplify By bari mehdi.
+          Welcome {user.username}, To our React app.
         </p>
         <a
           className="App-link"
@@ -31,9 +33,10 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={signOut}>Sign out</button>
       </header>
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

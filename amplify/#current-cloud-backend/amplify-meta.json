@@ -21,23 +21,37 @@
       "frontendAuthConfig": {
         "socialProviders": [],
         "usernameAttributes": [],
-        "signupAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
         "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
-        "mfaTypes": [],
-        "verificationMechanisms": []
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ],
+        "mfaConfiguration": "OFF"
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/auth/reactamplifytestapp-cloudformation-template.json",
         "logicalId": "authreactamplifytestapp"
       },
-      "lastPushTimeStamp": "2022-06-21T12:55:43.311Z",
+      "lastPushTimeStamp": "2022-06-22T11:00:46.643Z",
       "output": {
         "IdentityPoolId": "us-east-1:fa860d3b-6c2f-41fe-9622-1c2902151214",
-        "IdentityPoolName": "reactamplifytestapp_identitypool_f8057c55__dev"
+        "IdentityPoolName": "reactamplifytestapp_identitypool_f8057c55__dev",
+        "UserPoolId": "us-east-1_OLc3chqYQ",
+        "AppClientIDWeb": "286kqvqgrsbk6s8omaue9m4l9b",
+        "AppClientID": "2prmahdimp3g93s2fbjq6pdksf",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:914989871285:userpool/us-east-1_OLc3chqYQ",
+        "UserPoolName": "reactamplifytestapp_userpool_ccf258d6"
       },
-      "lastPushDirHash": "moTsk9DFmxAanvmmf9oxHEKOCt8="
+      "lastPushDirHash": "NV4RNVjKQbGxpY66bD4Xc6dRgxk=",
+      "customAuth": false
     }
   },
   "analytics": {
@@ -48,7 +62,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
         "logicalId": "analyticsreactamplifytestapp"
       },
-      "lastPushTimeStamp": "2022-06-21T12:55:43.311Z",
+      "lastPushTimeStamp": "2022-06-22T11:00:45.929Z",
       "output": {
         "appName": "reactamplifytestapp-dev",
         "Region": "us-east-1",
