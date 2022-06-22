@@ -40,7 +40,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/auth/reactamplifytestapp-cloudformation-template.json",
         "logicalId": "authreactamplifytestapp"
       },
-      "lastPushTimeStamp": "2022-06-22T11:00:46.643Z",
+      "lastPushTimeStamp": "2022-06-22T12:33:07.687Z",
       "output": {
         "IdentityPoolId": "us-east-1:fa860d3b-6c2f-41fe-9622-1c2902151214",
         "IdentityPoolName": "reactamplifytestapp_identitypool_f8057c55__dev",
@@ -62,13 +62,47 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
         "logicalId": "analyticsreactamplifytestapp"
       },
-      "lastPushTimeStamp": "2022-06-22T11:00:45.929Z",
+      "lastPushTimeStamp": "2022-06-22T12:33:07.691Z",
       "output": {
         "appName": "reactamplifytestapp-dev",
         "Region": "us-east-1",
         "Id": "e0be9d38607540b9a6d48cd1de523cde"
       },
       "lastPushDirHash": "Jr/u09wi+ZiNsJcu1kPPLD3wBM4="
+    }
+  },
+  "api": {
+    "reactamplifytestapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "reactamplifytestapp",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authreactamplifytestapp"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "k37gl6lba5g3pa6lllvxvq4e7m",
+        "GraphQLAPIEndpointOutput": "https://fsjashyrt5a5dbmvrhdb4wsady.appsync-api.us-east-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apireactamplifytestapp"
+      },
+      "lastPushTimeStamp": "2022-06-22T12:33:10.606Z",
+      "lastPushDirHash": "VCUqyP+DhwFiDBi4TQqhiNQsx8I="
     }
   }
 }

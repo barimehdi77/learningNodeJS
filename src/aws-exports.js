@@ -25,7 +25,10 @@ const awsmobile = {
         "EMAIL"
     ],
     "aws_mobile_analytics_app_id": "e0be9d38607540b9a6d48cd1de523cde",
-    "aws_mobile_analytics_app_region": "us-east-1"
+    "aws_mobile_analytics_app_region": "us-east-1",
+    "aws_appsync_graphqlEndpoint": "https://fsjashyrt5a5dbmvrhdb4wsady.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_region": "us-east-1",
+    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS"
 };
 
 
