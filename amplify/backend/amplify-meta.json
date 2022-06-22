@@ -32,7 +32,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/auth/reactamplifytestapp-cloudformation-template.json",
         "logicalId": "authreactamplifytestapp"
       },
-      "lastPushTimeStamp": "2022-06-21T12:55:43.311Z",
+      "lastPushTimeStamp": "2022-06-22T10:05:04.212Z",
       "output": {
         "IdentityPoolId": "us-east-1:fa860d3b-6c2f-41fe-9622-1c2902151214",
         "IdentityPoolName": "reactamplifytestapp_identitypool_f8057c55__dev"
@@ -48,7 +48,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactamplifytestapp-dev-64422-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
         "logicalId": "analyticsreactamplifytestapp"
       },
-      "lastPushTimeStamp": "2022-06-21T12:55:43.311Z",
+      "lastPushTimeStamp": "2022-06-22T10:05:04.230Z",
       "output": {
         "appName": "reactamplifytestapp-dev",
         "Region": "us-east-1",
