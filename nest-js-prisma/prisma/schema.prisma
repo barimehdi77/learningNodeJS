@@ -10,10 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Author {
+  id    Int     @id @default(autoincrement())
+  name  String
+  books Books[]
 
-model Books {
-  @@map(name: "books")
-  id Int @default(autoincrement()) @id
-  title String
+  @@map(name: "author")
 }
 
+model Books {
+  id    Int    @id @default(autoincrement())
+  title String
+
+  Author   Author? @relation(fields: [Authorid], references: [id])
+  Authorid Int?
+  @@map(name: "books")
+}

@@ -8,19 +8,34 @@ import { UpdateBookDto } from './dto/update-book.dto';
 export class BooksService {
   constructor (private prisma: PrismaService) {}
 
-  create(createBookDto: Prisma.BooksCreateInput) {
+  create(data: Prisma.BooksCreateInput) {
     return this.prisma.books.create({
-      data: createBookDto,
+      data,
     });
   }
 
   findAll() {
-    return this.prisma.books.findMany();
+    return this.prisma.books.findMany({
+      include: {
+        Author: {
+          select: {
+            name: true,
+          }
+        }
+      }
+    });
   }
 
-  findOne(BooksWhereUniqueInput: Prisma.BooksWhereUniqueInput) {
+  findOne(where: Prisma.BooksWhereUniqueInput) {
     return this.prisma.books.findUnique({
-      where: BooksWhereUniqueInput,
+      where,
+      include: {
+        Author: {
+          select: {
+            name: true,
+          }
+        }
+      }
     });
   }
 
